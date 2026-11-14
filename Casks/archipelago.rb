@@ -1,6 +1,6 @@
 cask "archipelago" do
-  version "0.2.0,234"
-  sha256 "074a439988001488e297e3d0441f300b0e01cc114eb5fa87a97109d505d2499e"
+  version "0.2.0,235"
+  sha256 "b4db255b35909a143176fa2f8a15986d2d3a9796c30182861b106c67df4bf4c6"
 
   url "https://github.com/anuragdeshpande/homebrew-tap/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Archipelago.dmg"
   name "Archipelago"
