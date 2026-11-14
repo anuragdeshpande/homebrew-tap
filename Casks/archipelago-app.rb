@@ -1,6 +1,6 @@
 cask "archipelago-app" do
-  version "0.2.0,237"
-  sha256 "d0e6ae489e1f041466b490bf620db602cfa49078895847c13aeae63deb1487ed"
+  version "0.2.0,238"
+  sha256 "189ec447331a60c1a5e727fd7555b74e123a5ed66bac653e65e468df34e24d5b"
 
   url "https://github.com/anuragdeshpande/homebrew-tap/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Archipelago.dmg"
   name "Archipelago"
@@ -20,8 +20,6 @@ cask "archipelago-app" do
 
   postflight_steps do
     run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Archipelago.app"]
-    run "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister", args: ["-f", "{{appdir}}/Archipelago.app"]
-    run "/usr/bin/mdimport", args: ["{{appdir}}/Archipelago.app"]
   end
 
   uninstall quit: "com.archipelago.app"
