@@ -1,14 +1,14 @@
 cask "archipelago" do
-  version "0.2.0,229"
-  sha256 "9b02c9cdf6363947954415f3f06a47c2f63bf8ef6571ca0bfe25a8f727c63593"
+  version "0.2.0,230"
+  sha256 "e9cbc58dfa7e3e37c89b185f95437eb30d9d5af767e8c507bd7884e07ebea3f1"
 
-  url "https://github.com/anuragdeshpande/archipelago-universal/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Archipelago.dmg"
+  url "https://github.com/anuragdeshpande/homebrew-tap/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Archipelago.dmg"
   name "Archipelago"
   desc "Universal macOS Notch, Dynamic Island, and Pill surface engine"
-  homepage "https://github.com/anuragdeshpande/archipelago-universal"
+  homepage "https://github.com/anuragdeshpande/homebrew-tap"
 
   livecheck do
-    url "https://github.com/anuragdeshpande/archipelago-universal/releases/latest/download/appcast.xml"
+    url "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml"
     strategy :sparkle
   end
 
