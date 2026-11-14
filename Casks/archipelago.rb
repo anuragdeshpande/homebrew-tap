@@ -13,15 +13,13 @@ cask "archipelago" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Archipelago.app"
   binary "#{appdir}/Archipelago.app/Contents/MacOS/tools/archipelago"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Archipelago.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Archipelago.app"]
   end
 
   uninstall quit: "com.archipelago.app"
