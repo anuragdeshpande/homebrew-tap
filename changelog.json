@@ -1,53 +1,98 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-15T02:48:29Z",
+  "generatedAt": "2026-11-15T03:04:11Z",
   "latest": {
     "version": "0.2.0",
-    "build": "246",
-    "tag": "v0.2.0-build.246",
+    "build": "247",
+    "tag": "v0.2.0-build.247",
     "channel": "stable",
-    "commit": "b2158e211e7e09a2008fc572381c457711932a65",
-    "shortCommit": "b2158e2",
-    "publishedAt": "2026-11-15T02:48:29Z",
+    "commit": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+    "shortCommit": "e242dfb",
+    "publishedAt": "2026-11-15T03:04:11Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 8580178,
-    "sha256": "b31ce2299b3121cd7f3c202d801a7c5e170f58f67f2379c2af5e9dcda1432af2",
+    "contentLength": 8662104,
+    "sha256": "5753bac08492bafe6e1e0de1c868aedffde89a3b56c30131e43448c9af1e7187",
     "categories": [
       {
         "key": "feat",
         "title": "Features",
         "entries": [
           {
-            "sha": "b2158e211e7e09a2008fc572381c457711932a65",
-            "short_sha": "b2158e2",
+            "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+            "short_sha": "e242dfb",
             "category": "feat",
             "commit_type": "feat",
-            "scope": "release",
-            "subject": "generate categorized changelog and publish public changelog endpoints (#84)",
-            "raw_subject": "feat(release): generate categorized changelog and publish public changelog endpoints (#84)",
+            "scope": "system-events",
+            "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
+            "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
             "breaking": false,
-            "date": "2026-11-14T19:46:32-07:00"
+            "date": "2026-11-14T20:02:15-07:00"
           }
         ]
       }
     ],
     "commits": [
       {
-        "sha": "b2158e211e7e09a2008fc572381c457711932a65",
-        "short_sha": "b2158e2",
+        "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+        "short_sha": "e242dfb",
         "category": "feat",
         "commit_type": "feat",
-        "scope": "release",
-        "subject": "generate categorized changelog and publish public changelog endpoints (#84)",
-        "raw_subject": "feat(release): generate categorized changelog and publish public changelog endpoints (#84)",
+        "scope": "system-events",
+        "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
+        "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
         "breaking": false,
-        "date": "2026-11-14T19:46:32-07:00"
+        "date": "2026-11-14T20:02:15-07:00"
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.2.0",
+      "build": "247",
+      "tag": "v0.2.0-build.247",
+      "channel": "stable",
+      "commit": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+      "shortCommit": "e242dfb",
+      "publishedAt": "2026-11-15T03:04:11Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 8662104,
+      "sha256": "5753bac08492bafe6e1e0de1c868aedffde89a3b56c30131e43448c9af1e7187",
+      "categories": [
+        {
+          "key": "feat",
+          "title": "Features",
+          "entries": [
+            {
+              "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+              "short_sha": "e242dfb",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "system-events",
+              "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
+              "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
+              "breaking": false,
+              "date": "2026-11-14T20:02:15-07:00"
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
+          "short_sha": "e242dfb",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "system-events",
+          "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
+          "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
+          "breaking": false,
+          "date": "2026-11-14T20:02:15-07:00"
+        }
+      ]
+    },
     {
       "version": "0.2.0",
       "build": "246",
