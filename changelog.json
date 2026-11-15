@@ -1,81 +1,98 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-15T03:07:11Z",
+  "generatedAt": "2026-11-15T03:21:10Z",
   "latest": {
-    "version": "0.2.0",
-    "build": "248",
-    "tag": "v0.2.0-build.248",
+    "version": "0.2.1",
+    "build": "249",
+    "tag": "v0.2.1-build.249",
     "channel": "stable",
-    "commit": "3acd7addd65d6c86daf6c7811d717a5f50d7577d",
-    "shortCommit": "3acd7ad",
-    "publishedAt": "2026-11-15T03:07:11Z",
+    "commit": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+    "shortCommit": "3129f60",
+    "publishedAt": "2026-11-15T03:21:10Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 8662188,
-    "sha256": "e0ac616e80ba53d1d8dc96a7be9d391d8af509759b14d5db6b28f62abdca9643",
+    "contentLength": 8632641,
+    "sha256": "c61808cc09545f705678249c32bbf3b69f4977413ec642ff926da5452ef54d89",
     "categories": [
       {
-        "key": "feat",
-        "title": "Features",
+        "key": "fix",
+        "title": "Bug Fixes",
         "entries": [
           {
-            "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
-            "short_sha": "e242dfb",
-            "category": "feat",
-            "commit_type": "feat",
+            "sha": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+            "short_sha": "3129f60",
+            "category": "fix",
+            "commit_type": "fix",
             "scope": "system-events",
-            "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
-            "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
+            "subject": "show download percentage, completion checkmark, and temporary hover reveal (#80)",
+            "raw_subject": "fix(system-events): show download percentage, completion checkmark, and temporary hover reveal (#80)",
             "breaking": false,
-            "date": "2026-11-14T20:02:15-07:00"
-          }
-        ]
-      },
-      {
-        "key": "maintenance",
-        "title": "Maintenance & Tooling",
-        "entries": [
-          {
-            "sha": "3acd7addd65d6c86daf6c7811d717a5f50d7577d",
-            "short_sha": "3acd7ad",
-            "category": "maintenance",
-            "commit_type": "docs",
-            "scope": "agents",
-            "subject": "require release version bump recommendation on push",
-            "raw_subject": "docs(agents): require release version bump recommendation on push",
-            "breaking": false,
-            "date": "2026-11-14T20:05:12-07:00"
+            "date": "2026-11-14T20:19:10-07:00"
           }
         ]
       }
     ],
     "commits": [
       {
-        "sha": "3acd7addd65d6c86daf6c7811d717a5f50d7577d",
-        "short_sha": "3acd7ad",
-        "category": "maintenance",
-        "commit_type": "docs",
-        "scope": "agents",
-        "subject": "require release version bump recommendation on push",
-        "raw_subject": "docs(agents): require release version bump recommendation on push",
-        "breaking": false,
-        "date": "2026-11-14T20:05:12-07:00"
-      },
-      {
-        "sha": "e242dfba324daa28a1f68af6fb464922bc4ba399",
-        "short_sha": "e242dfb",
-        "category": "feat",
-        "commit_type": "feat",
+        "sha": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+        "short_sha": "3129f60",
+        "category": "fix",
+        "commit_type": "fix",
         "scope": "system-events",
-        "subject": "multi-source Download Tracker and per-extension SDK permissions (#80)",
-        "raw_subject": "feat(system-events): multi-source Download Tracker and per-extension SDK permissions (#80)",
+        "subject": "show download percentage, completion checkmark, and temporary hover reveal (#80)",
+        "raw_subject": "fix(system-events): show download percentage, completion checkmark, and temporary hover reveal (#80)",
         "breaking": false,
-        "date": "2026-11-14T20:02:15-07:00"
+        "date": "2026-11-14T20:19:10-07:00"
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.2.1",
+      "build": "249",
+      "tag": "v0.2.1-build.249",
+      "channel": "stable",
+      "commit": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+      "shortCommit": "3129f60",
+      "publishedAt": "2026-11-15T03:21:10Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 8632641,
+      "sha256": "c61808cc09545f705678249c32bbf3b69f4977413ec642ff926da5452ef54d89",
+      "categories": [
+        {
+          "key": "fix",
+          "title": "Bug Fixes",
+          "entries": [
+            {
+              "sha": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+              "short_sha": "3129f60",
+              "category": "fix",
+              "commit_type": "fix",
+              "scope": "system-events",
+              "subject": "show download percentage, completion checkmark, and temporary hover reveal (#80)",
+              "raw_subject": "fix(system-events): show download percentage, completion checkmark, and temporary hover reveal (#80)",
+              "breaking": false,
+              "date": "2026-11-14T20:19:10-07:00"
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "3129f6000341fdc0a2a2d1f4646b0a07026a22c8",
+          "short_sha": "3129f60",
+          "category": "fix",
+          "commit_type": "fix",
+          "scope": "system-events",
+          "subject": "show download percentage, completion checkmark, and temporary hover reveal (#80)",
+          "raw_subject": "fix(system-events): show download percentage, completion checkmark, and temporary hover reveal (#80)",
+          "breaking": false,
+          "date": "2026-11-14T20:19:10-07:00"
+        }
+      ]
+    },
     {
       "version": "0.2.0",
       "build": "248",
