@@ -1,62 +1,36 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-20T07:42:17Z",
+  "generatedAt": "2026-11-20T19:37:38Z",
   "latest": {
-    "version": "0.12.0",
-    "build": "346",
-    "tag": "v0.12.0-build.346",
+    "version": "0.12.1",
+    "build": "348",
+    "tag": "v0.12.1-build.348",
     "channel": "stable",
-    "commit": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
-    "shortCommit": "8a9c639",
-    "publishedAt": "2026-11-20T07:42:17Z",
+    "commit": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+    "shortCommit": "474c28e",
+    "publishedAt": "2026-11-20T19:37:38Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 13402930,
-    "sha256": "de97a129c07864594beabc22def64b53d887a0bba6d7974850b496cf9ce7e5bf",
+    "contentLength": 13578697,
+    "sha256": "154ade1c657d84a2a7eb8f659a5a19e523782b2313518ea868205e8d57fbc87e",
     "categories": [
       {
         "key": "feat",
         "title": "Features",
         "entries": [
           {
-            "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
-            "short_sha": "a154b4f",
+            "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
+            "short_sha": "c186f70",
             "category": "feat",
             "commit_type": "feat",
-            "scope": "extensions",
-            "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
-            "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+            "scope": "surfaces",
+            "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
+            "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
             "breaking": false,
-            "date": "2026-11-20T00:38:21-07:00",
-            "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
-            "preview_surface": "localAI"
-          },
-          {
-            "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
-            "short_sha": "d9c103c",
-            "category": "feat",
-            "commit_type": "feat",
-            "scope": "extensions",
-            "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
-            "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
-            "breaking": false,
-            "date": "2026-11-19T23:29:07-07:00",
-            "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
-            "preview_surface": "localAI"
-          },
-          {
-            "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
-            "short_sha": "1f34872",
-            "category": "feat",
-            "commit_type": "feat",
-            "scope": "glass",
-            "subject": "add melt distance, tint depth, clarity, and color tint controls",
-            "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
-            "breaking": false,
-            "date": "2026-11-19T16:53:06-07:00",
-            "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
-            "preview_surface": null
+            "date": "2026-11-20T12:33:39-07:00",
+            "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
+            "preview_surface": "notification"
           }
         ]
       },
@@ -65,15 +39,15 @@
         "title": "Maintenance & Tooling",
         "entries": [
           {
-            "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
-            "short_sha": "8a9c639",
+            "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+            "short_sha": "474c28e",
             "category": "maintenance",
             "commit_type": "chore",
             "scope": "release",
-            "subject": "bump version to 0.12.0",
-            "raw_subject": "chore(release): bump version to 0.12.0",
+            "subject": "bump version to 0.12.1",
+            "raw_subject": "chore(release): bump version to 0.12.1",
             "breaking": false,
-            "date": "2026-11-20T00:38:41-07:00",
+            "date": "2026-11-20T12:34:05-07:00",
             "description": "",
             "preview_surface": null
           }
@@ -82,60 +56,115 @@
     ],
     "commits": [
       {
-        "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
-        "short_sha": "8a9c639",
+        "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+        "short_sha": "474c28e",
         "category": "maintenance",
         "commit_type": "chore",
         "scope": "release",
-        "subject": "bump version to 0.12.0",
-        "raw_subject": "chore(release): bump version to 0.12.0",
+        "subject": "bump version to 0.12.1",
+        "raw_subject": "chore(release): bump version to 0.12.1",
         "breaking": false,
-        "date": "2026-11-20T00:38:41-07:00",
+        "date": "2026-11-20T12:34:05-07:00",
         "description": "",
         "preview_surface": null
       },
       {
-        "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
-        "short_sha": "a154b4f",
+        "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
+        "short_sha": "c186f70",
         "category": "feat",
         "commit_type": "feat",
-        "scope": "extensions",
-        "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
-        "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+        "scope": "surfaces",
+        "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
+        "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
         "breaking": false,
-        "date": "2026-11-20T00:38:21-07:00",
-        "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
-        "preview_surface": "localAI"
-      },
-      {
-        "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
-        "short_sha": "d9c103c",
-        "category": "feat",
-        "commit_type": "feat",
-        "scope": "extensions",
-        "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
-        "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
-        "breaking": false,
-        "date": "2026-11-19T23:29:07-07:00",
-        "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
-        "preview_surface": "localAI"
-      },
-      {
-        "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
-        "short_sha": "1f34872",
-        "category": "feat",
-        "commit_type": "feat",
-        "scope": "glass",
-        "subject": "add melt distance, tint depth, clarity, and color tint controls",
-        "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
-        "breaking": false,
-        "date": "2026-11-19T16:53:06-07:00",
-        "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
-        "preview_surface": null
+        "date": "2026-11-20T12:33:39-07:00",
+        "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
+        "preview_surface": "notification"
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.12.1",
+      "build": "348",
+      "tag": "v0.12.1-build.348",
+      "channel": "stable",
+      "commit": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+      "shortCommit": "474c28e",
+      "publishedAt": "2026-11-20T19:37:38Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 13578697,
+      "sha256": "154ade1c657d84a2a7eb8f659a5a19e523782b2313518ea868205e8d57fbc87e",
+      "categories": [
+        {
+          "key": "feat",
+          "title": "Features",
+          "entries": [
+            {
+              "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
+              "short_sha": "c186f70",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "surfaces",
+              "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
+              "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
+              "breaking": false,
+              "date": "2026-11-20T12:33:39-07:00",
+              "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
+              "preview_surface": "notification"
+            }
+          ]
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance & Tooling",
+          "entries": [
+            {
+              "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+              "short_sha": "474c28e",
+              "category": "maintenance",
+              "commit_type": "chore",
+              "scope": "release",
+              "subject": "bump version to 0.12.1",
+              "raw_subject": "chore(release): bump version to 0.12.1",
+              "breaking": false,
+              "date": "2026-11-20T12:34:05-07:00",
+              "description": "",
+              "preview_surface": null
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
+          "short_sha": "474c28e",
+          "category": "maintenance",
+          "commit_type": "chore",
+          "scope": "release",
+          "subject": "bump version to 0.12.1",
+          "raw_subject": "chore(release): bump version to 0.12.1",
+          "breaking": false,
+          "date": "2026-11-20T12:34:05-07:00",
+          "description": "",
+          "preview_surface": null
+        },
+        {
+          "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
+          "short_sha": "c186f70",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "surfaces",
+          "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
+          "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
+          "breaking": false,
+          "date": "2026-11-20T12:33:39-07:00",
+          "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
+          "preview_surface": "notification"
+        }
+      ]
+    },
     {
       "version": "0.12.0",
       "build": "346",
