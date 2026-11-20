@@ -1,36 +1,100 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-20T20:08:16Z",
+  "generatedAt": "2026-11-20T22:05:20Z",
   "latest": {
-    "version": "0.12.2",
-    "build": "350",
-    "tag": "v0.12.2-build.350",
+    "version": "0.12.3",
+    "build": "356",
+    "tag": "v0.12.3-build.356",
     "channel": "stable",
-    "commit": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
-    "shortCommit": "8592e84",
-    "publishedAt": "2026-11-20T20:08:16Z",
+    "commit": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+    "shortCommit": "a842e6e",
+    "publishedAt": "2026-11-20T22:05:20Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 13594073,
-    "sha256": "cf9070ce053f9309dc676e3d4013ccfc12546ea41c6419f7973c9aaa68b707a5",
+    "contentLength": 13639842,
+    "sha256": "8b6ecf3cb964d5bfa4227c2b034f185f3e7b634925d8f6adcd3b5bc563b443cc",
     "categories": [
+      {
+        "key": "feat",
+        "title": "Features",
+        "entries": [
+          {
+            "sha": "723fd50bc3122ca43173fd30f99bb8b87a5c2d66",
+            "short_sha": "723fd50",
+            "category": "feat",
+            "commit_type": "feat",
+            "scope": "dock",
+            "subject": "scale visible window capacity proportionally when preview size steps down",
+            "raw_subject": "feat(dock): scale visible window capacity proportionally when preview size steps down",
+            "breaking": false,
+            "date": "2026-11-20T14:39:59-07:00",
+            "description": "Adds effectiveMaxVisibleWindows and effectiveGridLimits on DockPreviewSize so stepping down from Large to Medium to Small keeps the popover footprint utilized and fits proportionally more windows into the preview without extra scrolling.",
+            "preview_surface": "dockPreview"
+          }
+        ]
+      },
       {
         "key": "fix",
         "title": "Bug Fixes",
         "entries": [
           {
-            "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
-            "short_sha": "269a8d3",
+            "sha": "85ec5bdd28f8cc14437106aaa95b6481ad364248",
+            "short_sha": "85ec5bd",
             "category": "fix",
             "commit_type": "fix",
-            "scope": "quill,selection",
-            "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
-            "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+            "scope": "quill,windows,dock",
+            "subject": "host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+            "raw_subject": "fix(quill,windows,dock): host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
             "breaking": false,
-            "date": "2026-11-20T13:04:49-07:00",
-            "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
-            "preview_surface": "selectionHUD"
+            "date": "2026-11-20T14:25:10-07:00",
+            "description": "Skips host-level keyboard and AX focus evaluation for apps excluded in Quill Writing Assistant settings and preserves post-replacement caret position for Auto-Correct.\nKeeps macOS activation policy regular while standard windows (such as Settings) are open so Cmd+Tab works and Appearance changes never push Settings to the background. Keeps auto-hidden Docks revealed while inside Dock Previews, centers previews on the app icon from initial presentation, and smoothly morphs multi-window previews without premature dismissal when closing windows.\nCloses #167 Closes #168",
+            "preview_surface": "dockPreview"
+          }
+        ]
+      },
+      {
+        "key": "perf",
+        "title": "Performance",
+        "entries": [
+          {
+            "sha": "08c13b35b72ca9ab3a4624522d86f92802f55e84",
+            "short_sha": "08c13b3",
+            "category": "perf",
+            "commit_type": "perf",
+            "scope": "runtime",
+            "subject": "cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+            "raw_subject": "perf(runtime): cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+            "breaking": false,
+            "date": "2026-11-20T15:00:30-07:00",
+            "description": "Local voice transcription and local language model servers now keep memory usage strictly bounded instead of accumulating multi-gigabyte Metal buffers across requests. Local AI models start lazily on first use, load weights in small batches, chunk longer audio, reclaim GPU cache buffers after each request, unload automatically after 180 seconds of inactivity, and shut down cleanly when Archipelago quits.\nVoice dictation pills, window focus transitions, and background Dock tracking now consume significantly less CPU and battery. Audio waveform rendering uses a single lightweight canvas and constant glow blur with 20 Hz level coalescing, adaptive menu bar sampling debounces rapid window bursts, auto-hide Dock polling backs off to 2.5 seconds while hidden, and memory spike alerts accurately point to the specific AI runtime or child process responsible.\nRefs #169",
+            "preview_surface": null
+          },
+          {
+            "sha": "6cc07d5e119d6b3e48c018ceb3b134e54042f86e",
+            "short_sha": "6cc07d5",
+            "category": "perf",
+            "commit_type": "perf",
+            "scope": "dock",
+            "subject": "adaptive Dock Preview size step-down and 50-window performance optimization",
+            "raw_subject": "perf(dock): adaptive Dock Preview size step-down and 50-window performance optimization",
+            "breaking": false,
+            "date": "2026-11-20T14:35:23-07:00",
+            "description": "Adds effectiveSize(forWindowCount:) on DockPreviewSize so previews automatically step down one size level every 6 windows above 6 (Large -> Medium -> Small, stopping at Small) without altering the user's saved default.\nUses LazyHStack for scrollable horizontal preview strips, caps initial synchronous thumbnail captures and background live refreshes for large window counts, and adds unit and 50-window E2E performance/scaling tests.",
+            "preview_surface": "dockPreview"
+          },
+          {
+            "sha": "29de5061169f4cbae34aaa3dd6eae4c36ff7139b",
+            "short_sha": "29de506",
+            "category": "perf",
+            "commit_type": "perf",
+            "scope": "dock",
+            "subject": "offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+            "raw_subject": "perf(dock): offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+            "breaking": false,
+            "date": "2026-11-20T14:27:20-07:00",
+            "description": "Moves live Dock Preview thumbnail refreshes off the main thread onto a background queue, skips refreshes during active unfold/morph animations, and downsamples captured window images to 640px max width to keep 9+ window previews responsive.\nReplaces the slow left-sliding spring transition on hovered window title traffic lights with an instant 100ms in-place opacity fade, and adds an E2E 9-window animation and performance test.",
+            "preview_surface": "dockPreview"
           }
         ]
       },
@@ -39,15 +103,15 @@
         "title": "Maintenance & Tooling",
         "entries": [
           {
-            "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
-            "short_sha": "8592e84",
+            "sha": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+            "short_sha": "a842e6e",
             "category": "maintenance",
             "commit_type": "chore",
             "scope": "release",
-            "subject": "bump version to 0.12.2",
-            "raw_subject": "chore(release): bump version to 0.12.2",
+            "subject": "bump version to 0.12.3",
+            "raw_subject": "chore(release): bump version to 0.12.3",
             "breaking": false,
-            "date": "2026-11-20T13:05:05-07:00",
+            "date": "2026-11-20T15:02:24-07:00",
             "description": "",
             "preview_surface": null
           }
@@ -56,34 +120,283 @@
     ],
     "commits": [
       {
-        "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
-        "short_sha": "8592e84",
+        "sha": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+        "short_sha": "a842e6e",
         "category": "maintenance",
         "commit_type": "chore",
         "scope": "release",
-        "subject": "bump version to 0.12.2",
-        "raw_subject": "chore(release): bump version to 0.12.2",
+        "subject": "bump version to 0.12.3",
+        "raw_subject": "chore(release): bump version to 0.12.3",
         "breaking": false,
-        "date": "2026-11-20T13:05:05-07:00",
+        "date": "2026-11-20T15:02:24-07:00",
         "description": "",
         "preview_surface": null
       },
       {
-        "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
-        "short_sha": "269a8d3",
+        "sha": "08c13b35b72ca9ab3a4624522d86f92802f55e84",
+        "short_sha": "08c13b3",
+        "category": "perf",
+        "commit_type": "perf",
+        "scope": "runtime",
+        "subject": "cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+        "raw_subject": "perf(runtime): cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+        "breaking": false,
+        "date": "2026-11-20T15:00:30-07:00",
+        "description": "Local voice transcription and local language model servers now keep memory usage strictly bounded instead of accumulating multi-gigabyte Metal buffers across requests. Local AI models start lazily on first use, load weights in small batches, chunk longer audio, reclaim GPU cache buffers after each request, unload automatically after 180 seconds of inactivity, and shut down cleanly when Archipelago quits.\nVoice dictation pills, window focus transitions, and background Dock tracking now consume significantly less CPU and battery. Audio waveform rendering uses a single lightweight canvas and constant glow blur with 20 Hz level coalescing, adaptive menu bar sampling debounces rapid window bursts, auto-hide Dock polling backs off to 2.5 seconds while hidden, and memory spike alerts accurately point to the specific AI runtime or child process responsible.\nRefs #169",
+        "preview_surface": null
+      },
+      {
+        "sha": "723fd50bc3122ca43173fd30f99bb8b87a5c2d66",
+        "short_sha": "723fd50",
+        "category": "feat",
+        "commit_type": "feat",
+        "scope": "dock",
+        "subject": "scale visible window capacity proportionally when preview size steps down",
+        "raw_subject": "feat(dock): scale visible window capacity proportionally when preview size steps down",
+        "breaking": false,
+        "date": "2026-11-20T14:39:59-07:00",
+        "description": "Adds effectiveMaxVisibleWindows and effectiveGridLimits on DockPreviewSize so stepping down from Large to Medium to Small keeps the popover footprint utilized and fits proportionally more windows into the preview without extra scrolling.",
+        "preview_surface": "dockPreview"
+      },
+      {
+        "sha": "6cc07d5e119d6b3e48c018ceb3b134e54042f86e",
+        "short_sha": "6cc07d5",
+        "category": "perf",
+        "commit_type": "perf",
+        "scope": "dock",
+        "subject": "adaptive Dock Preview size step-down and 50-window performance optimization",
+        "raw_subject": "perf(dock): adaptive Dock Preview size step-down and 50-window performance optimization",
+        "breaking": false,
+        "date": "2026-11-20T14:35:23-07:00",
+        "description": "Adds effectiveSize(forWindowCount:) on DockPreviewSize so previews automatically step down one size level every 6 windows above 6 (Large -> Medium -> Small, stopping at Small) without altering the user's saved default.\nUses LazyHStack for scrollable horizontal preview strips, caps initial synchronous thumbnail captures and background live refreshes for large window counts, and adds unit and 50-window E2E performance/scaling tests.",
+        "preview_surface": "dockPreview"
+      },
+      {
+        "sha": "29de5061169f4cbae34aaa3dd6eae4c36ff7139b",
+        "short_sha": "29de506",
+        "category": "perf",
+        "commit_type": "perf",
+        "scope": "dock",
+        "subject": "offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+        "raw_subject": "perf(dock): offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+        "breaking": false,
+        "date": "2026-11-20T14:27:20-07:00",
+        "description": "Moves live Dock Preview thumbnail refreshes off the main thread onto a background queue, skips refreshes during active unfold/morph animations, and downsamples captured window images to 640px max width to keep 9+ window previews responsive.\nReplaces the slow left-sliding spring transition on hovered window title traffic lights with an instant 100ms in-place opacity fade, and adds an E2E 9-window animation and performance test.",
+        "preview_surface": "dockPreview"
+      },
+      {
+        "sha": "85ec5bdd28f8cc14437106aaa95b6481ad364248",
+        "short_sha": "85ec5bd",
         "category": "fix",
         "commit_type": "fix",
-        "scope": "quill,selection",
-        "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
-        "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+        "scope": "quill,windows,dock",
+        "subject": "host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+        "raw_subject": "fix(quill,windows,dock): host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
         "breaking": false,
-        "date": "2026-11-20T13:04:49-07:00",
-        "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
-        "preview_surface": "selectionHUD"
+        "date": "2026-11-20T14:25:10-07:00",
+        "description": "Skips host-level keyboard and AX focus evaluation for apps excluded in Quill Writing Assistant settings and preserves post-replacement caret position for Auto-Correct.\nKeeps macOS activation policy regular while standard windows (such as Settings) are open so Cmd+Tab works and Appearance changes never push Settings to the background. Keeps auto-hidden Docks revealed while inside Dock Previews, centers previews on the app icon from initial presentation, and smoothly morphs multi-window previews without premature dismissal when closing windows.\nCloses #167 Closes #168",
+        "preview_surface": "dockPreview"
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.12.3",
+      "build": "356",
+      "tag": "v0.12.3-build.356",
+      "channel": "stable",
+      "commit": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+      "shortCommit": "a842e6e",
+      "publishedAt": "2026-11-20T22:05:20Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 13639842,
+      "sha256": "8b6ecf3cb964d5bfa4227c2b034f185f3e7b634925d8f6adcd3b5bc563b443cc",
+      "categories": [
+        {
+          "key": "feat",
+          "title": "Features",
+          "entries": [
+            {
+              "sha": "723fd50bc3122ca43173fd30f99bb8b87a5c2d66",
+              "short_sha": "723fd50",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "dock",
+              "subject": "scale visible window capacity proportionally when preview size steps down",
+              "raw_subject": "feat(dock): scale visible window capacity proportionally when preview size steps down",
+              "breaking": false,
+              "date": "2026-11-20T14:39:59-07:00",
+              "description": "Adds effectiveMaxVisibleWindows and effectiveGridLimits on DockPreviewSize so stepping down from Large to Medium to Small keeps the popover footprint utilized and fits proportionally more windows into the preview without extra scrolling.",
+              "preview_surface": "dockPreview"
+            }
+          ]
+        },
+        {
+          "key": "fix",
+          "title": "Bug Fixes",
+          "entries": [
+            {
+              "sha": "85ec5bdd28f8cc14437106aaa95b6481ad364248",
+              "short_sha": "85ec5bd",
+              "category": "fix",
+              "commit_type": "fix",
+              "scope": "quill,windows,dock",
+              "subject": "host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+              "raw_subject": "fix(quill,windows,dock): host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+              "breaking": false,
+              "date": "2026-11-20T14:25:10-07:00",
+              "description": "Skips host-level keyboard and AX focus evaluation for apps excluded in Quill Writing Assistant settings and preserves post-replacement caret position for Auto-Correct.\nKeeps macOS activation policy regular while standard windows (such as Settings) are open so Cmd+Tab works and Appearance changes never push Settings to the background. Keeps auto-hidden Docks revealed while inside Dock Previews, centers previews on the app icon from initial presentation, and smoothly morphs multi-window previews without premature dismissal when closing windows.\nCloses #167 Closes #168",
+              "preview_surface": "dockPreview"
+            }
+          ]
+        },
+        {
+          "key": "perf",
+          "title": "Performance",
+          "entries": [
+            {
+              "sha": "08c13b35b72ca9ab3a4624522d86f92802f55e84",
+              "short_sha": "08c13b3",
+              "category": "perf",
+              "commit_type": "perf",
+              "scope": "runtime",
+              "subject": "cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+              "raw_subject": "perf(runtime): cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+              "breaking": false,
+              "date": "2026-11-20T15:00:30-07:00",
+              "description": "Local voice transcription and local language model servers now keep memory usage strictly bounded instead of accumulating multi-gigabyte Metal buffers across requests. Local AI models start lazily on first use, load weights in small batches, chunk longer audio, reclaim GPU cache buffers after each request, unload automatically after 180 seconds of inactivity, and shut down cleanly when Archipelago quits.\nVoice dictation pills, window focus transitions, and background Dock tracking now consume significantly less CPU and battery. Audio waveform rendering uses a single lightweight canvas and constant glow blur with 20 Hz level coalescing, adaptive menu bar sampling debounces rapid window bursts, auto-hide Dock polling backs off to 2.5 seconds while hidden, and memory spike alerts accurately point to the specific AI runtime or child process responsible.\nRefs #169",
+              "preview_surface": null
+            },
+            {
+              "sha": "6cc07d5e119d6b3e48c018ceb3b134e54042f86e",
+              "short_sha": "6cc07d5",
+              "category": "perf",
+              "commit_type": "perf",
+              "scope": "dock",
+              "subject": "adaptive Dock Preview size step-down and 50-window performance optimization",
+              "raw_subject": "perf(dock): adaptive Dock Preview size step-down and 50-window performance optimization",
+              "breaking": false,
+              "date": "2026-11-20T14:35:23-07:00",
+              "description": "Adds effectiveSize(forWindowCount:) on DockPreviewSize so previews automatically step down one size level every 6 windows above 6 (Large -> Medium -> Small, stopping at Small) without altering the user's saved default.\nUses LazyHStack for scrollable horizontal preview strips, caps initial synchronous thumbnail captures and background live refreshes for large window counts, and adds unit and 50-window E2E performance/scaling tests.",
+              "preview_surface": "dockPreview"
+            },
+            {
+              "sha": "29de5061169f4cbae34aaa3dd6eae4c36ff7139b",
+              "short_sha": "29de506",
+              "category": "perf",
+              "commit_type": "perf",
+              "scope": "dock",
+              "subject": "offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+              "raw_subject": "perf(dock): offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+              "breaking": false,
+              "date": "2026-11-20T14:27:20-07:00",
+              "description": "Moves live Dock Preview thumbnail refreshes off the main thread onto a background queue, skips refreshes during active unfold/morph animations, and downsamples captured window images to 640px max width to keep 9+ window previews responsive.\nReplaces the slow left-sliding spring transition on hovered window title traffic lights with an instant 100ms in-place opacity fade, and adds an E2E 9-window animation and performance test.",
+              "preview_surface": "dockPreview"
+            }
+          ]
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance & Tooling",
+          "entries": [
+            {
+              "sha": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+              "short_sha": "a842e6e",
+              "category": "maintenance",
+              "commit_type": "chore",
+              "scope": "release",
+              "subject": "bump version to 0.12.3",
+              "raw_subject": "chore(release): bump version to 0.12.3",
+              "breaking": false,
+              "date": "2026-11-20T15:02:24-07:00",
+              "description": "",
+              "preview_surface": null
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "a842e6eb9cb2977cf8b42471f6ec47ad094d2351",
+          "short_sha": "a842e6e",
+          "category": "maintenance",
+          "commit_type": "chore",
+          "scope": "release",
+          "subject": "bump version to 0.12.3",
+          "raw_subject": "chore(release): bump version to 0.12.3",
+          "breaking": false,
+          "date": "2026-11-20T15:02:24-07:00",
+          "description": "",
+          "preview_surface": null
+        },
+        {
+          "sha": "08c13b35b72ca9ab3a4624522d86f92802f55e84",
+          "short_sha": "08c13b3",
+          "category": "perf",
+          "commit_type": "perf",
+          "scope": "runtime",
+          "subject": "cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+          "raw_subject": "perf(runtime): cap local AI MLX memory usage and reduce dictation/idle CPU overhead (#169)",
+          "breaking": false,
+          "date": "2026-11-20T15:00:30-07:00",
+          "description": "Local voice transcription and local language model servers now keep memory usage strictly bounded instead of accumulating multi-gigabyte Metal buffers across requests. Local AI models start lazily on first use, load weights in small batches, chunk longer audio, reclaim GPU cache buffers after each request, unload automatically after 180 seconds of inactivity, and shut down cleanly when Archipelago quits.\nVoice dictation pills, window focus transitions, and background Dock tracking now consume significantly less CPU and battery. Audio waveform rendering uses a single lightweight canvas and constant glow blur with 20 Hz level coalescing, adaptive menu bar sampling debounces rapid window bursts, auto-hide Dock polling backs off to 2.5 seconds while hidden, and memory spike alerts accurately point to the specific AI runtime or child process responsible.\nRefs #169",
+          "preview_surface": null
+        },
+        {
+          "sha": "723fd50bc3122ca43173fd30f99bb8b87a5c2d66",
+          "short_sha": "723fd50",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "dock",
+          "subject": "scale visible window capacity proportionally when preview size steps down",
+          "raw_subject": "feat(dock): scale visible window capacity proportionally when preview size steps down",
+          "breaking": false,
+          "date": "2026-11-20T14:39:59-07:00",
+          "description": "Adds effectiveMaxVisibleWindows and effectiveGridLimits on DockPreviewSize so stepping down from Large to Medium to Small keeps the popover footprint utilized and fits proportionally more windows into the preview without extra scrolling.",
+          "preview_surface": "dockPreview"
+        },
+        {
+          "sha": "6cc07d5e119d6b3e48c018ceb3b134e54042f86e",
+          "short_sha": "6cc07d5",
+          "category": "perf",
+          "commit_type": "perf",
+          "scope": "dock",
+          "subject": "adaptive Dock Preview size step-down and 50-window performance optimization",
+          "raw_subject": "perf(dock): adaptive Dock Preview size step-down and 50-window performance optimization",
+          "breaking": false,
+          "date": "2026-11-20T14:35:23-07:00",
+          "description": "Adds effectiveSize(forWindowCount:) on DockPreviewSize so previews automatically step down one size level every 6 windows above 6 (Large -> Medium -> Small, stopping at Small) without altering the user's saved default.\nUses LazyHStack for scrollable horizontal preview strips, caps initial synchronous thumbnail captures and background live refreshes for large window counts, and adds unit and 50-window E2E performance/scaling tests.",
+          "preview_surface": "dockPreview"
+        },
+        {
+          "sha": "29de5061169f4cbae34aaa3dd6eae4c36ff7139b",
+          "short_sha": "29de506",
+          "category": "perf",
+          "commit_type": "perf",
+          "scope": "dock",
+          "subject": "offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+          "raw_subject": "perf(dock): offload multi-window thumbnail capture, downsample previews, and fade hover traffic lights",
+          "breaking": false,
+          "date": "2026-11-20T14:27:20-07:00",
+          "description": "Moves live Dock Preview thumbnail refreshes off the main thread onto a background queue, skips refreshes during active unfold/morph animations, and downsamples captured window images to 640px max width to keep 9+ window previews responsive.\nReplaces the slow left-sliding spring transition on hovered window title traffic lights with an instant 100ms in-place opacity fade, and adds an E2E 9-window animation and performance test.",
+          "preview_surface": "dockPreview"
+        },
+        {
+          "sha": "85ec5bdd28f8cc14437106aaa95b6481ad364248",
+          "short_sha": "85ec5bd",
+          "category": "fix",
+          "commit_type": "fix",
+          "scope": "quill,windows,dock",
+          "subject": "host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+          "raw_subject": "fix(quill,windows,dock): host-level app exclusions, standard Cmd+Tab window policy, and smooth Dock Preview close morph",
+          "breaking": false,
+          "date": "2026-11-20T14:25:10-07:00",
+          "description": "Skips host-level keyboard and AX focus evaluation for apps excluded in Quill Writing Assistant settings and preserves post-replacement caret position for Auto-Correct.\nKeeps macOS activation policy regular while standard windows (such as Settings) are open so Cmd+Tab works and Appearance changes never push Settings to the background. Keeps auto-hidden Docks revealed while inside Dock Previews, centers previews on the app icon from initial presentation, and smoothly morphs multi-window previews without premature dismissal when closing windows.\nCloses #167 Closes #168",
+          "preview_surface": "dockPreview"
+        }
+      ]
+    },
     {
       "version": "0.12.2",
       "build": "350",
