@@ -1,36 +1,36 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-20T19:37:38Z",
+  "generatedAt": "2026-11-20T20:08:16Z",
   "latest": {
-    "version": "0.12.1",
-    "build": "348",
-    "tag": "v0.12.1-build.348",
+    "version": "0.12.2",
+    "build": "350",
+    "tag": "v0.12.2-build.350",
     "channel": "stable",
-    "commit": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
-    "shortCommit": "474c28e",
-    "publishedAt": "2026-11-20T19:37:38Z",
+    "commit": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+    "shortCommit": "8592e84",
+    "publishedAt": "2026-11-20T20:08:16Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 13578697,
-    "sha256": "154ade1c657d84a2a7eb8f659a5a19e523782b2313518ea868205e8d57fbc87e",
+    "contentLength": 13594073,
+    "sha256": "cf9070ce053f9309dc676e3d4013ccfc12546ea41c6419f7973c9aaa68b707a5",
     "categories": [
       {
-        "key": "feat",
-        "title": "Features",
+        "key": "fix",
+        "title": "Bug Fixes",
         "entries": [
           {
-            "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
-            "short_sha": "c186f70",
-            "category": "feat",
-            "commit_type": "feat",
-            "scope": "surfaces",
-            "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
-            "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
+            "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
+            "short_sha": "269a8d3",
+            "category": "fix",
+            "commit_type": "fix",
+            "scope": "quill,selection",
+            "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+            "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
             "breaking": false,
-            "date": "2026-11-20T12:33:39-07:00",
-            "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
-            "preview_surface": "notification"
+            "date": "2026-11-20T13:04:49-07:00",
+            "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
+            "preview_surface": "selectionHUD"
           }
         ]
       },
@@ -39,15 +39,15 @@
         "title": "Maintenance & Tooling",
         "entries": [
           {
-            "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
-            "short_sha": "474c28e",
+            "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+            "short_sha": "8592e84",
             "category": "maintenance",
             "commit_type": "chore",
             "scope": "release",
-            "subject": "bump version to 0.12.1",
-            "raw_subject": "chore(release): bump version to 0.12.1",
+            "subject": "bump version to 0.12.2",
+            "raw_subject": "chore(release): bump version to 0.12.2",
             "breaking": false,
-            "date": "2026-11-20T12:34:05-07:00",
+            "date": "2026-11-20T13:05:05-07:00",
             "description": "",
             "preview_surface": null
           }
@@ -56,34 +56,115 @@
     ],
     "commits": [
       {
-        "sha": "474c28e1f5f4f3e8c76ff5588d6af995cf179499",
-        "short_sha": "474c28e",
+        "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+        "short_sha": "8592e84",
         "category": "maintenance",
         "commit_type": "chore",
         "scope": "release",
-        "subject": "bump version to 0.12.1",
-        "raw_subject": "chore(release): bump version to 0.12.1",
+        "subject": "bump version to 0.12.2",
+        "raw_subject": "chore(release): bump version to 0.12.2",
         "breaking": false,
-        "date": "2026-11-20T12:34:05-07:00",
+        "date": "2026-11-20T13:05:05-07:00",
         "description": "",
         "preview_surface": null
       },
       {
-        "sha": "c186f704b643e6c6993a76618c6509b742ee2dba",
-        "short_sha": "c186f70",
-        "category": "feat",
-        "commit_type": "feat",
-        "scope": "surfaces",
-        "subject": "add human-friendly drive names, background mount filter, and unified Partial Expansion",
-        "raw_subject": "feat(surfaces): add human-friendly drive names, background mount filter, and unified Partial Expansion",
+        "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
+        "short_sha": "269a8d3",
+        "category": "fix",
+        "commit_type": "fix",
+        "scope": "quill,selection",
+        "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+        "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
         "breaking": false,
-        "date": "2026-11-20T12:33:39-07:00",
-        "description": "Drive mount and eject alerts now show human-friendly volume names and formatted capacities alongside native macOS disk image icons, while automatically filtering out noisy background system mounts such as macOS Update staging volumes (`mnt1`). Power users can optionally re-enable background mount visibility anytime under Settings > System Events > Drive > Advanced, complete with an explanation of what those system mounts are.\nEvery event with a secondary detail tier across Notch, Dynamic Island, and Pill now uses a unified, more spacious Partial Expansion layout with exclusive expand-on-hover Liquid Glass action buttons, tactile haptics, and checkmark confirmation animations. Completion events such as Download Complete and Install Complete now open Partial Expansion automatically to present immediate actions without requiring a hover, while pointer hover and programmatic triggers share the exact same modular drawer and extensions remain strictly layout-only.\nRefs #165",
-        "preview_surface": "notification"
+        "date": "2026-11-20T13:04:49-07:00",
+        "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
+        "preview_surface": "selectionHUD"
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.12.2",
+      "build": "350",
+      "tag": "v0.12.2-build.350",
+      "channel": "stable",
+      "commit": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+      "shortCommit": "8592e84",
+      "publishedAt": "2026-11-20T20:08:16Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 13594073,
+      "sha256": "cf9070ce053f9309dc676e3d4013ccfc12546ea41c6419f7973c9aaa68b707a5",
+      "categories": [
+        {
+          "key": "fix",
+          "title": "Bug Fixes",
+          "entries": [
+            {
+              "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
+              "short_sha": "269a8d3",
+              "category": "fix",
+              "commit_type": "fix",
+              "scope": "quill,selection",
+              "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+              "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+              "breaking": false,
+              "date": "2026-11-20T13:04:49-07:00",
+              "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
+              "preview_surface": "selectionHUD"
+            }
+          ]
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance & Tooling",
+          "entries": [
+            {
+              "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+              "short_sha": "8592e84",
+              "category": "maintenance",
+              "commit_type": "chore",
+              "scope": "release",
+              "subject": "bump version to 0.12.2",
+              "raw_subject": "chore(release): bump version to 0.12.2",
+              "breaking": false,
+              "date": "2026-11-20T13:05:05-07:00",
+              "description": "",
+              "preview_surface": null
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "8592e84283064a6ee6877a5a024bfb5a7d14b25d",
+          "short_sha": "8592e84",
+          "category": "maintenance",
+          "commit_type": "chore",
+          "scope": "release",
+          "subject": "bump version to 0.12.2",
+          "raw_subject": "chore(release): bump version to 0.12.2",
+          "breaking": false,
+          "date": "2026-11-20T13:05:05-07:00",
+          "description": "",
+          "preview_surface": null
+        },
+        {
+          "sha": "269a8d3d5a60c4a9b3b86d7052e6eee804328488",
+          "short_sha": "269a8d3",
+          "category": "fix",
+          "commit_type": "fix",
+          "scope": "quill,selection",
+          "subject": "anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+          "raw_subject": "fix(quill,selection): anchor word suggestions to caret, guard Up-arrow navigation, lock tone pill above input, and support toggleable SDUI sub-panels",
+          "breaking": false,
+          "date": "2026-11-20T13:04:49-07:00",
+          "description": "Fixes word suggestion popovers jumping to the top-left corner by adding character-trailing-edge and AXTextMarkerRange caret fallbacks. Prevents Up Arrow from hijacking multi-line cursor movement when no text selection popover is active or while typing word suggestions.\nKeeps the tone analysis pill anchored above the top-right corner of multi-line text inputs, hides the AI model removal Danger Zone until the specific model is installed, and adds toggleable sub-panel navigation rows with live state updates for extension settings.\nCloses #166",
+          "preview_surface": "selectionHUD"
+        }
+      ]
+    },
     {
       "version": "0.12.1",
       "build": "348",
