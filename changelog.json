@@ -1,55 +1,62 @@
 {
   "schemaVersion": 1,
   "product": "Archipelago",
-  "generatedAt": "2026-11-19T23:26:57Z",
+  "generatedAt": "2026-11-20T07:42:17Z",
   "latest": {
-    "version": "0.11.0",
-    "build": "342",
-    "tag": "v0.11.0-build.342",
+    "version": "0.12.0",
+    "build": "346",
+    "tag": "v0.12.0-build.346",
     "channel": "stable",
-    "commit": "30eb544fb2df060bbc792f689e428b997ac2fc74",
-    "shortCommit": "30eb544",
-    "publishedAt": "2026-11-19T23:26:57Z",
+    "commit": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+    "shortCommit": "8a9c639",
+    "publishedAt": "2026-11-20T07:42:17Z",
     "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
     "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
-    "contentLength": 13328349,
-    "sha256": "3e7a47b9ab655d5832fc9406edba2dc2714dbfbe3767c81192bfe2892b9252fe",
+    "contentLength": 13402930,
+    "sha256": "de97a129c07864594beabc22def64b53d887a0bba6d7974850b496cf9ce7e5bf",
     "categories": [
       {
         "key": "feat",
         "title": "Features",
         "entries": [
           {
-            "sha": "101de577c7c1d24cd0e493989fb637d6c9889198",
-            "short_sha": "101de57",
+            "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
+            "short_sha": "a154b4f",
             "category": "feat",
             "commit_type": "feat",
-            "scope": "downloads,surface",
-            "subject": "multi-download ETA/speed, core hover list, 10pt wing padding, and Store/AI updates",
-            "raw_subject": "feat(downloads,surface): multi-download ETA/speed, core hover list, 10pt wing padding, and Store/AI updates",
+            "scope": "extensions",
+            "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+            "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
             "breaking": false,
-            "date": "2026-11-19T16:23:19-07:00",
-            "description": "Upgrades the Downloads live activity to show an animated 'Downloading' indicator (or 'X Downloading' for simultaneous transfers) in the leading wing and live ETA in the trailing wing across Safari, Chromium, Firefox, AirDrop, and NSProgress transfers, with per-item speed and hover-to-cancel actions in a new reusable core multi-line hover list (SurfaceHoverListView and hoverList.* CLI commands).\nStandardizes 10pt visual outer wing padding across Notch, Pill, and Island layouts, eliminates the expanded resting notch secondary surface regression, and includes the pending Store, AIModelKit, Onboarding, What's New, and Quill updates.",
-            "preview_surface": "notification"
-          }
-        ]
-      },
-      {
-        "key": "fix",
-        "title": "Bug Fixes",
-        "entries": [
+            "date": "2026-11-20T00:38:21-07:00",
+            "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
+            "preview_surface": "localAI"
+          },
           {
-            "sha": "8d2c2a90ea60609d2b7d0599b945654f05bc52f2",
-            "short_sha": "8d2c2a9",
-            "category": "fix",
-            "commit_type": "fix",
-            "scope": "glass",
-            "subject": "restore crystal-clear Dynamic Glass refraction and notch body alignment",
-            "raw_subject": "fix(glass): restore crystal-clear Dynamic Glass refraction and notch body alignment",
+            "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
+            "short_sha": "d9c103c",
+            "category": "feat",
+            "commit_type": "feat",
+            "scope": "extensions",
+            "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
+            "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
             "breaking": false,
-            "date": "2026-11-19T16:23:09-07:00",
-            "description": "Fixes cloudy, blurred, and double-inset rendering on the expanded Dynamic Glass notch so background content remains crisp and refracts sharply along the bottom rim.\nRe-pins CABackdropLayer scale to 1.0 after resize and display/occlusion/wake transitions, removes flipped coordinate and CALayer mask overrides on NSGlassEffectView, disables overlay layer-tree auto-flattening, aligns the single-inset 20pt notch body lens with 0.22 smoke and a 0.60 melt stop, and removes the forced frost veil when frost is set to 0%.",
-            "preview_surface": "notification"
+            "date": "2026-11-19T23:29:07-07:00",
+            "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
+            "preview_surface": "localAI"
+          },
+          {
+            "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
+            "short_sha": "1f34872",
+            "category": "feat",
+            "commit_type": "feat",
+            "scope": "glass",
+            "subject": "add melt distance, tint depth, clarity, and color tint controls",
+            "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
+            "breaking": false,
+            "date": "2026-11-19T16:53:06-07:00",
+            "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
+            "preview_surface": null
           }
         ]
       },
@@ -58,15 +65,15 @@
         "title": "Maintenance & Tooling",
         "entries": [
           {
-            "sha": "30eb544fb2df060bbc792f689e428b997ac2fc74",
-            "short_sha": "30eb544",
+            "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+            "short_sha": "8a9c639",
             "category": "maintenance",
             "commit_type": "chore",
             "scope": "release",
-            "subject": "bump version to 0.11.0",
-            "raw_subject": "chore(release): bump version to 0.11.0",
+            "subject": "bump version to 0.12.0",
+            "raw_subject": "chore(release): bump version to 0.12.0",
             "breaking": false,
-            "date": "2026-11-19T16:23:45-07:00",
+            "date": "2026-11-20T00:38:41-07:00",
             "description": "",
             "preview_surface": null
           }
@@ -75,47 +82,193 @@
     ],
     "commits": [
       {
-        "sha": "30eb544fb2df060bbc792f689e428b997ac2fc74",
-        "short_sha": "30eb544",
+        "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+        "short_sha": "8a9c639",
         "category": "maintenance",
         "commit_type": "chore",
         "scope": "release",
-        "subject": "bump version to 0.11.0",
-        "raw_subject": "chore(release): bump version to 0.11.0",
+        "subject": "bump version to 0.12.0",
+        "raw_subject": "chore(release): bump version to 0.12.0",
         "breaking": false,
-        "date": "2026-11-19T16:23:45-07:00",
+        "date": "2026-11-20T00:38:41-07:00",
         "description": "",
         "preview_surface": null
       },
       {
-        "sha": "101de577c7c1d24cd0e493989fb637d6c9889198",
-        "short_sha": "101de57",
+        "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
+        "short_sha": "a154b4f",
         "category": "feat",
         "commit_type": "feat",
-        "scope": "downloads,surface",
-        "subject": "multi-download ETA/speed, core hover list, 10pt wing padding, and Store/AI updates",
-        "raw_subject": "feat(downloads,surface): multi-download ETA/speed, core hover list, 10pt wing padding, and Store/AI updates",
+        "scope": "extensions",
+        "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+        "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
         "breaking": false,
-        "date": "2026-11-19T16:23:19-07:00",
-        "description": "Upgrades the Downloads live activity to show an animated 'Downloading' indicator (or 'X Downloading' for simultaneous transfers) in the leading wing and live ETA in the trailing wing across Safari, Chromium, Firefox, AirDrop, and NSProgress transfers, with per-item speed and hover-to-cancel actions in a new reusable core multi-line hover list (SurfaceHoverListView and hoverList.* CLI commands).\nStandardizes 10pt visual outer wing padding across Notch, Pill, and Island layouts, eliminates the expanded resting notch secondary surface regression, and includes the pending Store, AIModelKit, Onboarding, What's New, and Quill updates.",
-        "preview_surface": "notification"
+        "date": "2026-11-20T00:38:21-07:00",
+        "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
+        "preview_surface": "localAI"
       },
       {
-        "sha": "8d2c2a90ea60609d2b7d0599b945654f05bc52f2",
-        "short_sha": "8d2c2a9",
-        "category": "fix",
-        "commit_type": "fix",
-        "scope": "glass",
-        "subject": "restore crystal-clear Dynamic Glass refraction and notch body alignment",
-        "raw_subject": "fix(glass): restore crystal-clear Dynamic Glass refraction and notch body alignment",
+        "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
+        "short_sha": "d9c103c",
+        "category": "feat",
+        "commit_type": "feat",
+        "scope": "extensions",
+        "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
+        "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
         "breaking": false,
-        "date": "2026-11-19T16:23:09-07:00",
-        "description": "Fixes cloudy, blurred, and double-inset rendering on the expanded Dynamic Glass notch so background content remains crisp and refracts sharply along the bottom rim.\nRe-pins CABackdropLayer scale to 1.0 after resize and display/occlusion/wake transitions, removes flipped coordinate and CALayer mask overrides on NSGlassEffectView, disables overlay layer-tree auto-flattening, aligns the single-inset 20pt notch body lens with 0.22 smoke and a 0.60 melt stop, and removes the forced frost veil when frost is set to 0%.",
-        "preview_surface": "notification"
+        "date": "2026-11-19T23:29:07-07:00",
+        "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
+        "preview_surface": "localAI"
+      },
+      {
+        "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
+        "short_sha": "1f34872",
+        "category": "feat",
+        "commit_type": "feat",
+        "scope": "glass",
+        "subject": "add melt distance, tint depth, clarity, and color tint controls",
+        "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
+        "breaking": false,
+        "date": "2026-11-19T16:53:06-07:00",
+        "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
+        "preview_surface": null
       }
     ]
   },
   "releases": [
+    {
+      "version": "0.12.0",
+      "build": "346",
+      "tag": "v0.12.0-build.346",
+      "channel": "stable",
+      "commit": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+      "shortCommit": "8a9c639",
+      "publishedAt": "2026-11-20T07:42:17Z",
+      "downloadURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/Archipelago.dmg",
+      "appcastURL": "https://github.com/anuragdeshpande/homebrew-tap/releases/latest/download/appcast.xml",
+      "contentLength": 13402930,
+      "sha256": "de97a129c07864594beabc22def64b53d887a0bba6d7974850b496cf9ce7e5bf",
+      "categories": [
+        {
+          "key": "feat",
+          "title": "Features",
+          "entries": [
+            {
+              "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
+              "short_sha": "a154b4f",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "extensions",
+              "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+              "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+              "breaking": false,
+              "date": "2026-11-20T00:38:21-07:00",
+              "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
+              "preview_surface": "localAI"
+            },
+            {
+              "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
+              "short_sha": "d9c103c",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "extensions",
+              "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
+              "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
+              "breaking": false,
+              "date": "2026-11-19T23:29:07-07:00",
+              "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
+              "preview_surface": "localAI"
+            },
+            {
+              "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
+              "short_sha": "1f34872",
+              "category": "feat",
+              "commit_type": "feat",
+              "scope": "glass",
+              "subject": "add melt distance, tint depth, clarity, and color tint controls",
+              "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
+              "breaking": false,
+              "date": "2026-11-19T16:53:06-07:00",
+              "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
+              "preview_surface": null
+            }
+          ]
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance & Tooling",
+          "entries": [
+            {
+              "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+              "short_sha": "8a9c639",
+              "category": "maintenance",
+              "commit_type": "chore",
+              "scope": "release",
+              "subject": "bump version to 0.12.0",
+              "raw_subject": "chore(release): bump version to 0.12.0",
+              "breaking": false,
+              "date": "2026-11-20T00:38:41-07:00",
+              "description": "",
+              "preview_surface": null
+            }
+          ]
+        }
+      ],
+      "commits": [
+        {
+          "sha": "8a9c6392087caaf4fa14b28bf58149f7567c5a1b",
+          "short_sha": "8a9c639",
+          "category": "maintenance",
+          "commit_type": "chore",
+          "scope": "release",
+          "subject": "bump version to 0.12.0",
+          "raw_subject": "chore(release): bump version to 0.12.0",
+          "breaking": false,
+          "date": "2026-11-20T00:38:41-07:00",
+          "description": "",
+          "preview_surface": null
+        },
+        {
+          "sha": "a154b4fb75e5b2463c1273ac78bb69a6f46bc225",
+          "short_sha": "a154b4f",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "extensions",
+          "subject": "add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+          "raw_subject": "feat(extensions): add opt-in host runtime bridges, live audio waveform pill, and Quill v1.7.1 catalog",
+          "breaking": false,
+          "date": "2026-11-20T00:38:21-07:00",
+          "description": "Out-of-process extensions can now subscribe on demand to keyboard modifiers, focused text inputs across macOS and Chromium apps, host-permissioned microphone PCM streaming, managed Parakeet and oMLX local AI runtime wake-up, inline squiggle/underline text annotations, Liquid Glass anchored pills, and live audio waveform capsules without baking extension logic into Archipelago Core.\nThis also fixes persistent live-activity dismissal and microphone suppression cooldowns, prevents NSHostingView constraint-cycle crashes in floating overlay panels, ensures Store installs and updates restart upgraded extension binaries cleanly, and updates the built-in catalog seed for standalone Quill v1.7.1.",
+          "preview_surface": "localAI"
+        },
+        {
+          "sha": "d9c103cbde044915e6f3a5d0e36311101aa055c8",
+          "short_sha": "d9c103c",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "extensions",
+          "subject": "extract Quill out-of-process and expose rich Settings SDUI v2",
+          "raw_subject": "feat(extensions): extract Quill out-of-process and expose rich Settings SDUI v2",
+          "breaking": false,
+          "date": "2026-11-19T23:29:07-07:00",
+          "description": "Quill and Voice Transcribe now run completely out-of-process as a standalone extension installable from the Extension Store via verified GitHub Releases, dynamically appearing in the Settings sidebar only when installed and downloading managed local runtimes through AIModelKit with explicit consent.\nExtensions can now build native macOS Liquid Glass Settings panes using generic Server-Driven UI controls\u2014including extension headers with collapsible permission summaries, immediate toggles, hover-activated explainer popovers, segmented tier selectors, shortcut recorders, live text inputs, model management cards, and Core-isolated AI provider pickers\u2014backed by bidirectional IPC reactivity and CLI inspection commands.\nEvery installed extension's Settings pane now automatically includes a host-managed Uninstall section with a confirmation dialog at the bottom, ensuring any extension can be stopped and cleanly removed directly from Settings.",
+          "preview_surface": "localAI"
+        },
+        {
+          "sha": "1f34872f7cc19d88508b8bd82278991bf24b2483",
+          "short_sha": "1f34872",
+          "category": "feat",
+          "commit_type": "feat",
+          "scope": "glass",
+          "subject": "add melt distance, tint depth, clarity, and color tint controls",
+          "raw_subject": "feat(glass): add melt distance, tint depth, clarity, and color tint controls",
+          "breaking": false,
+          "date": "2026-11-19T16:53:06-07:00",
+          "description": "Appearance Settings now gives you direct control over how Dynamic Glass and Liquid Glass surfaces blend into your desktop, with live expanded-shelf preview as you tune each slider.\nYou can adjust Melt Distance to control how far solid black melts into refractive glass, fine-tune Tint Depth to dial smoke darkness without dulling clarity, customize Glass Clarity & Frost on both Dynamic Glass and Liquid Glass, and apply subtle native Glass Color Tint presets or a custom color. Dragging any glass slider temporarily expands the shelf so you see the exact look in real time and collapses it when you release.\nRefs #162",
+          "preview_surface": null
+        }
+      ]
+    },
     {
       "version": "0.11.0",
       "build": "342",
