@@ -1,0 +1,4 @@
+{
+  "dl": "https://github.com/anuragdeshpande/homebrew-tap/releases/download/sdk-v{version}/{crate}-{version}.crate",
+  "api": null
+}
