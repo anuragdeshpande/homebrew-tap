@@ -1,0 +1,11 @@
+[
+  {"identifier":"valid-v1-negotiation","scenario":"validNegotiation","expectation":"pass","payload":"dmFsaWROZWdvdGlhdGlvbg=="},
+  {"identifier":"incompatible-schema","scenario":"incompatibleSchema","expectation":"reject","payload":"aW5jb21wYXRpYmxlU2NoZW1h"},
+  {"identifier":"typed-activation-failures","scenario":"typedActivationFailures","expectation":"reject","payload":"dHlwZWRBY3RpdmF0aW9uRmFpbHVyZXM="},
+  {"identifier":"version-boundary","scenario":"versionBoundary","expectation":"pass","payload":"dmVyc2lvbkJvdW5kYXJ5"},
+  {"identifier":"malformed-manifest","scenario":"malformedManifest","expectation":"reject","payload":"bWFsZm9ybWVkTWFuaWZlc3Q="},
+  {"identifier":"stale-sdui-update","scenario":"staleSDUI","expectation":"reject","payload":"c3RhbGVTRFVJ"},
+  {"identifier":"unsupported-required-primitive","scenario":"unsupportedRequiredPrimitive","expectation":"reject","payload":"dW5zdXBwb3J0ZWRSZXF1aXJlZFByaW1pdGl2ZQ=="},
+  {"identifier":"ipc-boundary-frame","scenario":"validIPC","expectation":"pass","payload":"dmFsaWRJUEM="},
+  {"identifier":"ipc-invalid-frame","scenario":"invalidIPC","expectation":"reject","payload":"aW52YWxpZElQQw=="}
+]
