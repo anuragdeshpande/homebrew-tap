@@ -117,8 +117,29 @@ public struct StoreCuratedPreviewScene: Codable, Equatable, Identifiable, Sendab
     }
 }
 
+/// Per-platform downloadable artifact descriptor (e.g. `macos-universal`, `windows-x64`, `windows-arm64`).
+public struct StorePlatformArtifact: Codable, Equatable, Sendable {
+    public let url: String
+    public let sizeBytes: UInt64
+    public let sha256: String
+
+    public init(url: String, sizeBytes: UInt64, sha256: String) {
+        self.url = url
+        self.sizeBytes = sizeBytes
+        self.sha256 = sha256
+    }
+}
+
 /// Full curated Storefront listing paired with its signed `CatalogEntrySchema` trust record.
 public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
+    #if os(macOS)
+    public static let currentPlatformKey = "macos-universal"
+    #elseif os(Windows)
+    public static let currentPlatformKey = "windows-x64"
+    #else
+    public static let currentPlatformKey = "linux-x64"
+    #endif
+
     public let id: String
     public let name: String
     public let subtitle: String
@@ -131,6 +152,7 @@ public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
     public let supportedSurfaces: [String]
     public let sizeBytes: UInt64
     public let artifactURL: String
+    public let platformArtifacts: [String: StorePlatformArtifact]
     public let dependencies: [ArtifactDependency]
     public let catalogEntry: CatalogEntrySchema
     public let usageFacts: StoreCuratedUsageFacts
@@ -151,6 +173,7 @@ public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
         supportedSurfaces: [String] = ["Notch", "Island", "Pill"],
         sizeBytes: UInt64,
         artifactURL: String,
+        platformArtifacts: [String: StorePlatformArtifact] = [:],
         dependencies: [ArtifactDependency] = [],
         catalogEntry: CatalogEntrySchema,
         usageFacts: StoreCuratedUsageFacts,
@@ -170,6 +193,7 @@ public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
         self.supportedSurfaces = supportedSurfaces
         self.sizeBytes = sizeBytes
         self.artifactURL = artifactURL
+        self.platformArtifacts = platformArtifacts
         self.dependencies = dependencies
         self.catalogEntry = catalogEntry
         self.usageFacts = usageFacts
@@ -180,6 +204,26 @@ public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
 
     public var isValid: Bool {
         !id.isEmpty && !name.isEmpty && !licenseSPDX.isEmpty && !artifactURL.isEmpty && catalogEntry.isValid
+    }
+
+    /// Resolves the artifact descriptor for `platformKey`, falling back to legacy single-platform fields.
+    public func resolvedArtifact(for platformKey: String = StoreCuratedExtensionEntry.currentPlatformKey) -> StorePlatformArtifact {
+        if let specific = platformArtifacts[platformKey] {
+            return specific
+        }
+        return StorePlatformArtifact(
+            url: artifactURL,
+            sizeBytes: sizeBytes,
+            sha256: catalogEntry.artifactSHA256
+        )
+    }
+
+    /// Indicates whether this listing declares a compatible artifact for `platformKey` (or uses legacy single-platform fields).
+    public func supportsPlatform(_ platformKey: String = StoreCuratedExtensionEntry.currentPlatformKey) -> Bool {
+        if platformArtifacts.isEmpty {
+            return true
+        }
+        return platformArtifacts[platformKey] != nil
     }
 
     public init(from decoder: Decoder) throws {
@@ -196,6 +240,7 @@ public struct StoreCuratedExtensionEntry: Codable, Equatable, Sendable {
         supportedSurfaces = try container.decodeIfPresent([String].self, forKey: .supportedSurfaces) ?? ["Notch", "Island", "Pill"]
         sizeBytes = try container.decode(UInt64.self, forKey: .sizeBytes)
         artifactURL = try container.decode(String.self, forKey: .artifactURL)
+        platformArtifacts = try container.decodeIfPresent([String: StorePlatformArtifact].self, forKey: .platformArtifacts) ?? [:]
         dependencies = try container.decodeIfPresent([ArtifactDependency].self, forKey: .dependencies) ?? []
         catalogEntry = try container.decode(CatalogEntrySchema.self, forKey: .catalogEntry)
         usageFacts = try container.decode(StoreCuratedUsageFacts.self, forKey: .usageFacts)
