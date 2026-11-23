@@ -228,6 +228,18 @@ public final class ExtensionIPCWriter: @unchecked Sendable {
         ])
     }
 
+    /// Publishes declarative menu bar items for this extension into the host menu bar.
+    public func setMenuBarItems(_ spec: ExtensionMenuBarSpec, encoder: JSONEncoder = JSONEncoder()) throws {
+        let specData = try encoder.encode(spec)
+        let specObject = try JSONSerialization.jsonObject(with: specData)
+        try sendEvent(method: "set_menu_bar_items", payload: specObject)
+    }
+
+    /// Removes this extension's menu bar submenu from the host menu bar.
+    public func clearMenuBarItems() throws {
+        try sendEvent(method: "clear_menu_bar_items", payload: [String: Any]())
+    }
+
     public func sendResponse(requestID: String, payload: Data, nonce: String? = nil) throws {
         var envelope: [String: Any] = [
             "kind": "response",
